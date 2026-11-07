@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "shelldrop",
+  "version": "0.1.0",
+  "description": "Set up a Mac or Linux machine so AI coding agents (Claude Code, Codex, any CLI agent) can be run and checked from an iPhone or iPad over SSH, with tmux keeping sessions alive and Tailscale for the route in. One skill plus Shell Drop's read-only MCP server: setup guide, tmux commands, a phone-friendly tmux.conf and connection troubleshooting.",
+  "author": {
+    "name": "Daniel Bilsborough",
+    "url": "https://shelldrop.sh"
+  },
+  "homepage": "https://shelldrop.sh",
+  "repository": "https://github.com/shelldrop-sh/agent-skills",
+  "license": "MIT",
+  "keywords": ["shelldrop", "ssh", "tmux", "tailscale", "iphone", "ipad", "claude-code", "codex", "remote", "mcp"],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "servers": {
+        "shelldrop": { "trust": "untrusted" }
+      }
+    }
+  }
+}
