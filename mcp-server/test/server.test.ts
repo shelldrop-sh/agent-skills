@@ -27,7 +27,7 @@ async function call(name: string, args: Record<string, unknown>) {
   return r.json.result as { content: { type: string; text: string }[]; isError?: boolean };
 }
 
-const NO_DASHES = /[—–]|--(?!-)(?= )/;
+const NO_DASHES = /[\u2014\u2013]|--(?!-)(?= )/;
 
 describe("content", () => {
   it("setup guide differs per OS and covers every step", () => {
