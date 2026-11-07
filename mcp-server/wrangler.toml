@@ -1,0 +1,16 @@
+name = "shelldrop-mcp"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+# Turn off workers.dev once the custom domain is live, if a single public URL is wanted.
+workers_dev = true
+
+# Observability stays off: the server must not log tool inputs.
+[observability]
+enabled = false
+
+# Custom domain, NOT configured yet. When mcp.shelldrop.sh is ready (shelldrop.sh is a
+# zone on the same Cloudflare account), uncomment and run `npx wrangler deploy`:
+#
+# routes = [
+#   { pattern = "mcp.shelldrop.sh", custom_domain = true }
+# ]

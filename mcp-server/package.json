@@ -1,0 +1,23 @@
+{
+  "name": "shelldrop-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shell Drop remote MCP server: read-only setup, tmux and troubleshooting help for running AI agents from an iPhone or iPad.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261107.1",
+    "typescript": "7.0.2",
+    "vitest": "5.1.0",
+    "wrangler": "4.158.0"
+  }
+}
