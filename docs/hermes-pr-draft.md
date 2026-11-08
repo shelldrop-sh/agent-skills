@@ -56,7 +56,7 @@ hermes plugins validate --install-deps <checkout at the pinned sha>
 
 Then in a chat: "Use the shelldrop remote setup skill to tell me what you would change on this machine", and call `mcp__shelldrop__tmux_howto` with `{"task": "detach"}`.
 
-## Test results (fill in after deploy)
+## Test results
 
 Validate, clean clone at the pinned sha (local run, 2026-11-08, Hermes v0.23.0):
 
@@ -70,18 +70,18 @@ Validate, clean clone at the pinned sha (local run, 2026-11-08, Hermes v0.23.0):
 Validation passed.
 ```
 
-Live server (to do after `mcp.shelldrop.sh` is deployed):
+Live server, https://mcp.shelldrop.sh/mcp (2026-11-08):
 
 | Check | Result |
 |---|---|
-| `initialize` returns serverInfo `shelldrop` 0.1.0, stateless (no `Mcp-Session-Id`) | |
-| `tools/list` returns the four tools, all `readOnlyHint: true` | |
-| `setup_guide {"os":"macos"}` / `{"os":"linux"}` | |
-| `tmux_howto {"task":"detach"}` | |
-| `generate_tmux_conf {}` | |
-| `troubleshoot_connection {"symptom":"connection refused"}` | |
-| Installed via `hermes plugins install` + enable, tools appear as `mcp__shelldrop__*` and a call succeeds | |
-| Skill appears as `shelldrop:shelldrop-remote-setup` in `skills_list` | |
+| `initialize` returns serverInfo `shelldrop` 0.1.0, stateless (no `Mcp-Session-Id`) | Pass: serverInfo shelldrop 0.1.0, no session id header |
+| `tools/list` returns the four tools, all `readOnlyHint: true` | Pass: 4 tools, 4 x readOnlyHint true |
+| `setup_guide {"os":"macos"}` / `{"os":"linux"}` | Pass: both return the step list |
+| `tmux_howto {"task":"detach"}` | Pass: Ctrl-b then d, `tmux detach` |
+| `generate_tmux_conf {}` | Pass: phone-friendly snippet with set-titles, mouse, set-clipboard |
+| `troubleshoot_connection {"symptom":"connection refused"}` | Pass: Remote Login / OpenSSH fix |
+| Installed via `hermes plugins install --ref <sha>` + enable (isolated HERMES_HOME, Hermes v0.23.0) | Pass: installs and enables (install scan verdict `caution`, so a community install needs `--force` until listed); `hermes plugins doctor shelldrop` OK; `hermes mcp add` against the URL discovers all 4 tools |
+| Skill appears as `shelldrop:shelldrop-remote-setup` in `skills_list` | Not verified in a live chat session (no model configured in the isolated test home) |
 
 ## Checklist
 
