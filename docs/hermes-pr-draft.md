@@ -6,7 +6,7 @@ Before opening:
 
 1. Push this repo to `github.com/shelldrop-sh/agent-skills` (public).
 2. Deploy `mcp-server/` to `https://mcp.shelldrop.sh/mcp` and fill in the test results below.
-3. Check the `sha` in the YAML is the commit you want reviewed (currently `e6cd4af58ca3dc07b049f0fd17ce3573505ff82c`, the last commit before these docs). If anything under `skills/`, `plugin.json`, `mcp.json`, `README.md` or `mcp-server/` changes after that, re-pin to the new commit.
+3. Check the `sha` in the YAML is the commit you want reviewed (currently `76ccfa36bc5f51f8403b3f85acfe302d07c802d5`, the last commit before these docs). If anything under `skills/`, `plugin.json`, `mcp.json`, `README.md` or `mcp-server/` changes after that, re-pin to the new commit.
 4. Re-run `hermes plugins validate --install-deps <fresh clone at that sha>`.
 
 PR title: `feat(plugin-catalog): add shelldrop`
