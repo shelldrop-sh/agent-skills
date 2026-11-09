@@ -24,7 +24,7 @@ const text = (t: string) => ({ content: [{ type: "text" as const, text: t }] });
 
 export function buildServer(): McpServer {
   const server = new McpServer(
-    { name: SERVER_NAME, version: SERVER_VERSION, websiteUrl: LINKS.site },
+    { name: SERVER_NAME, version: SERVER_VERSION, websiteUrl: LINKS.docs },
     {
       instructions:
         "Read-only help for running AI coding agents (Claude Code, Codex, any CLI agent) on a Mac or Linux machine " +

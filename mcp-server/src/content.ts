@@ -4,6 +4,7 @@
 
 export const LINKS = {
   site: "https://shelldrop.sh",
+  docs: "https://shelldrop.sh/mcp/",
   appStore: "https://apps.apple.com/app/id6760954570",
   tmuxCheatSheet: "https://shelldrop.sh/tmux-cheat-sheet/",
   sshKeys: "https://shelldrop.sh/ssh-keys-on-iphone/",

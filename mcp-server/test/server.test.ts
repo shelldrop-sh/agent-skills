@@ -141,6 +141,8 @@ describe("worker over Streamable HTTP", () => {
   it("root describes the endpoint, unknown paths 404", async () => {
     const root = await worker.fetch(new Request("https://mcp.shelldrop.sh/"));
     expect(await root.text()).toContain("/mcp");
+    expect(root.status).toBe(302);
+    expect(root.headers.get("Location")).toBe("https://shelldrop.sh/mcp/");
     const nope = await worker.fetch(new Request("https://mcp.shelldrop.sh/nope"));
     expect(nope.status).toBe(404);
   });

@@ -11,4 +11,4 @@ npx wrangler dev    # local server at http://localhost:8787/mcp
 
 Tools: `setup_guide`, `tmux_howto`, `generate_tmux_conf`, `troubleshoot_connection`. All answers live in `src/content.ts`, derived from `../skills/shelldrop-remote-setup/SKILL.md` and https://shelldrop.sh/tmux-cheat-sheet/.
 
-Deploy: the custom domain is commented out in `wrangler.toml`. Uncomment the `routes` block, then `npx wrangler deploy`.
+Deploy: `npx wrangler deploy` (custom domain mcp.shelldrop.sh). GET / redirects to the docs page https://shelldrop.sh/mcp/.

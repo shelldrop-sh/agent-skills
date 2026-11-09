@@ -50,11 +50,12 @@ export default {
     }
 
     if (url.pathname === "/" && request.method === "GET") {
+      // Browsers land on the connector page; the body still names the endpoint for anything that reads it.
       return new Response(
         `Shell Drop MCP server. Streamable HTTP endpoint: ${url.origin}/mcp\n` +
           "Read-only. Tools: setup_guide, tmux_howto, generate_tmux_conf, troubleshoot_connection.\n" +
-          `About Shell Drop: ${LINKS.site}\n`,
-        { headers: { "Content-Type": "text/plain; charset=utf-8", ...CORS } },
+          `Docs: ${LINKS.docs}\n`,
+        { status: 302, headers: { Location: LINKS.docs, "Content-Type": "text/plain; charset=utf-8", ...CORS } },
       );
     }
     return new Response("Not found\n", { status: 404, headers: CORS });
