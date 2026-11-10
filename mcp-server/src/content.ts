@@ -11,7 +11,6 @@ export const LINKS = {
   agentOs: "https://shelldrop.sh/agent-operating-system/",
 } as const;
 
-const FOOTER = `\n\nShell Drop is a free iOS SSH client for AI agent operators: ${LINKS.appStore}`;
 
 // ---------------------------------------------------------------- setup_guide
 
@@ -140,8 +139,7 @@ export function setupGuide(os: SetupOs): string {
     `# Set up a ${label} machine for running AI agents from an iPhone or iPad\n\n` +
     "Ask before any change that needs administrator rights, back up config files before editing, " +
     "and append to them, never overwrite.\n\n" +
-    steps +
-    FOOTER
+    steps
   );
 }
 
@@ -417,8 +415,7 @@ export function troubleshootConnection(symptom: string): string {
   if (hits.length === 0) {
     return (
       `No exact match for "${symptom}". Known symptoms: timeout, refused, can't find session, copy not working.\n\n` +
-      FIXES.map((f) => f.answer).join("\n\n") +
-      FOOTER
+      FIXES.map((f) => f.answer).join("\n\n")
     );
   }
   return hits[0].f.answer + `\n\nMore: ${LINKS.tmuxCheatSheet}`;

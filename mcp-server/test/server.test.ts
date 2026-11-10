@@ -40,7 +40,7 @@ describe("content", () => {
     for (const g of [mac, linux]) {
       expect(g).toContain("## 8. Verify");
       expect(g).toContain("set -g set-clipboard on");
-      expect(g).toContain("https://apps.apple.com/app/id6760954570");
+      expect(g).not.toContain("apps.apple.com"); // no promotional footer
     }
   });
 
